@@ -14,9 +14,66 @@ class _HomePageState extends State<HomePage> {
       drawer: new Drawer(
         child: Column(
 
+
           children: <Widget>[
+            new Container(
+              height: 200,
+              width: 350,
+              child: new Center(
+                child: new Text("PlantEase",
+                style: new TextStyle(fontSize: 40.0,color: Colors.white),),
+              ),
+              color: Colors.teal,
+            ),
+             Padding(padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.5, 0.0, 0.0)),
+             new Row(
+               children: <Widget>[
+                 IconButton(
+                   icon: Icon(
+                     Icons.language, color: Colors.teal,
 
+                   )
+                 ),
+                 Text("Change Language", style: new TextStyle(fontSize: 15,color: Colors.teal),)
+               ],
 
+             ),
+            new Row(
+              children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.info_outline, color: Colors.teal,
+
+                    )
+                ),
+                Text("How To Use App", style: new TextStyle(fontSize: 15,color: Colors.teal),)
+              ],
+
+            ),
+            new Row(
+              children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.mail_outline, color: Colors.teal,
+
+                    )
+                ),
+                Text("Contact Us", style: new TextStyle(fontSize: 15,color: Colors.teal),)
+              ],
+
+            ),
+            new Row(
+              children: <Widget>[
+                IconButton(
+                    icon: Icon(
+                      Icons.share, color: Colors.teal,
+
+                    )
+                ),
+                Text("Share App", style: new TextStyle(fontSize: 15,color: Colors.teal),)
+              ],
+
+            )
           ],
         ),
       ),
@@ -66,27 +123,27 @@ class _HomePageState extends State<HomePage> {
             shrinkWrap: true,
             children: <Widget>[
               _buildCard("Graoes",
-                  'https://7gigzxopz0uiqxo1-zippykid.netdna-ssl.com/wp-content/uploads/2018/02/grapes-2656259_1280.jpg'),
+                  'assets/grapes-2656259_1280.jpg'),
               _buildCard("Apple",
-                  "https://cdn.newsapi.com.au/image/v1/2b74874798de42d5de6e4711150946d3"),
+                  "assets/2b74874798de42d5de6e4711150946d3.jpg"),
               _buildCard("Cherry",
-                  'https://www.habitataid.co.uk/media/catalog/product/cache/1/image/9df78eab33525d08d6e5fb8d27136e95/C/h/Cherry_Tree_-_Stella.JPG'),
+                  'assets/Cherry_Tree_-_Stella.jpg'),
               _buildCard("Corn",
-                  "https://edge.bonnieplants.com/www/uploads/20181011003703/BONNIE-PLANTS_corn-iStock-857670630-2400px.jpg"),
+                  "assets/BONNIE-PLANTS_corn-iStock-857670630-2400px.jpg"),
               _buildCard("Orange",
-                  "http://www.laceupforchange.org.za/wp-content/uploads/2017/02/fruit-orange.jpg"),
+                  "assets/fruit-orange.jpg"),
               _buildCard("Peach",
-                  "http://bastet-plants.com/wp-content/uploads/2015/04/peach-seedling-350x322.jpg"),
+                  "assets/peach-seedling-350x322.jpg"),
               _buildCard("Pepper",
-                  "https://eltayseerco.com/wp-content/uploads/2017/10/image1_2_NNDIjA1438463783480.jpg"),
+                  "assets/image1_2_NNDIjA1438463783480.jpg"),
               _buildCard("Potato",
-                  "https://cdn.mr-fothergills.co.uk/product-images/op/z/POT-270z.jpg"),
+                  "assets/POT-270z.jpg"),
               _buildCard("Squash",
-                  "https://assets.epicurious.com/photos/5893c1d869bb8db572652050/16:9/w_1280,c_limit/winter-squash-varieties-020217.jpg"),
+                  "assets/winter-squash-varieties-020217.jpg"),
               _buildCard(
-                  "Strawberry", "https://www.gurneys.com/images/475/13853.jpg"),
+                  "Strawberry", "assets/13853.jpg"),
               _buildCard("Tomato",
-                  "http://www.daily-mail.co.zm/wp-content/uploads/2014/09/tomato.jpg")
+                  "assets/tomato.jpg")
 
             ],
           )
@@ -113,7 +170,7 @@ class _HomePageState extends State<HomePage> {
                     borderRadius: BorderRadius.circular(40.0),
                     color: Colors.white,
                     image: DecorationImage(
-                        image: NetworkImage(status), fit: BoxFit.fill)
+                        image: AssetImage(status), fit: BoxFit.fill)
                 ),
               ),
               /* SizedBox(height: 15.0),
@@ -135,21 +192,8 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildContainer(String option) {
-    return Container(
-        child: new Row(
-          children: <Widget>[
-            IconButton(
-              icon: Icon(
-                  Icons.email
-              ),
 
-            )
-          ],
-        )
 
-    );
-  }
 }
 
 
