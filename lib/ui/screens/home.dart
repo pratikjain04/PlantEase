@@ -194,7 +194,7 @@ class _HomePageState extends State<HomePage> {
                     child: Text(
                       name,
                       style: TextStyle(
-                          color: Colors.green, fontWeight: FontWeight.bold),
+                          color: Colors.teal, fontWeight: FontWeight.bold),
                     ),
                   ),
           ])),
