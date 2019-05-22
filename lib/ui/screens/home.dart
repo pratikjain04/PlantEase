@@ -38,9 +38,9 @@ class _HomePageState extends State<HomePage> {
         child: SingleChildScrollView(
           child: Column(
             children: <Widget>[
-              SizedBox(height: uniHeight/16),
+              SizedBox(height: uniHeight/25),
               Container(
-                  padding: EdgeInsets.only(left: 25.0, right: 25.0),
+                  padding: EdgeInsets.only(left: uniWidth/14.4, right: uniWidth/14.4),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
