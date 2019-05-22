@@ -8,11 +8,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  double uniWidth;
+  double uniHeight;
+
   @override
   Widget build(BuildContext context) {
+    uniWidth = MediaQuery.of(context).size.width;
+    uniHeight = MediaQuery.of(context).size.height;
+
     return new Scaffold(
       drawer: new Drawer(
         child: Column(
+
 
 
           children: <Widget>[
@@ -75,6 +82,8 @@ class _HomePageState extends State<HomePage> {
 
             )
           ],
+
+
         ),
       ),
       appBar: new AppBar(
@@ -88,31 +97,28 @@ class _HomePageState extends State<HomePage> {
           ),
           color: Colors.white,
         ),
-
-
       ),
-      body: ListView(
+      body: Container(
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              SizedBox(height: uniHeight/25),
+              Container(
+                  padding: EdgeInsets.only(left: uniWidth/14.4, right: uniWidth/14.4),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: <Widget>[
+                      Text(
+                        "Select Your Crop",
+                        style: TextStyle(
+                          color: Colors.grey,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  )),
 
-        children: <Widget>[
-
-          SizedBox(height: 40.0),
-          Container(
-              padding: EdgeInsets.only(left: 25.0, right: 25.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: <Widget>[
-                  Text(
-                    "Select Your Crop",
-                    style: TextStyle(
-                      color: Colors.grey,
-
-                      fontSize: 15.0,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-
-                ],
-              )),
           SizedBox(
             height: 10.0,
           ),
@@ -145,9 +151,13 @@ class _HomePageState extends State<HomePage> {
               _buildCard("Tomato",
                   "assets/tomato.jpg")
 
+]
+              )
+
+
             ],
-          )
-        ],
+          ),
+        ),
       ),
     );
   }
@@ -155,11 +165,11 @@ class _HomePageState extends State<HomePage> {
   Widget _buildCard(String name, String status) {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
-      elevation: 7.0,
+      elevation: 3.0,
       child: Column(
         children: <Widget>[
           SizedBox(
-            height: 12.0,
+            height: uniHeight / 53,
           ),
           Stack(
             children: <Widget>[
@@ -171,30 +181,28 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.white,
                     image: DecorationImage(
                         image: AssetImage(status), fit: BoxFit.fill)
-                ),
+                )),
+
+
+          Expanded(
+            child: Center(
+              child: Text(
+                name,
+                style:
+                    TextStyle(color: Colors.green, fontWeight: FontWeight.bold),
               ),
-              /* SizedBox(height: 15.0),
-              Expanded(
-                child: Container(
-                  width: 175.0,
-                  decoration: BoxDecoration(
-                    color: Colors.blueGrey
-                  ),
-                  child: Center(
-                    child: Text(name),
-                  ),
-                )
-              )*/ //yaha pr error hai comment wale code me...expanded me
-            ],
+            ),
           )
         ],
       ),
+  ]
+    )
     );
   }
 
 
 
+
+
+
 }
-
-
-
