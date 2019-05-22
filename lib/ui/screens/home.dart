@@ -16,13 +16,12 @@ class _HomePageState extends State<HomePage> {
     uniWidth = MediaQuery.of(context).size.width;
     uniHeight = MediaQuery.of(context).size.height;
 
-    return new Scaffold(
-      drawer: new Drawer(
+    return Scaffold(
+      drawer: Drawer(
         child: Column(
           children: <Widget>[
             new Container(
-              height: 200,
-              width: 350,
+              height: uniHeight/3.25,
               child: new Center(
                 child: new Text(
                   "PlantEase",
@@ -96,6 +95,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+      
       appBar: new AppBar(
         backgroundColor: Colors.teal,
         title: new Text("Plant Ease"),
