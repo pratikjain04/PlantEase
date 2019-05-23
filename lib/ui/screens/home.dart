@@ -95,7 +95,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      
+
       appBar: new AppBar(
         backgroundColor: Colors.teal,
         title: new Text("Plant Ease"),
