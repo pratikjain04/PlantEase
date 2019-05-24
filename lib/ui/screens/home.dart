@@ -102,6 +102,7 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
 
+
         appBar: new AppBar(
           backgroundColor: Colors.teal,
           title: new Text("Plant Ease"),
@@ -112,8 +113,11 @@ class _HomePageState extends State<HomePage> {
               Icons.format_list_bulleted,
             ),
             color: Colors.white,
-          ),
+
+      )
         ),
+
+
         body: Container(
           child: SingleChildScrollView(
             child: Column(
