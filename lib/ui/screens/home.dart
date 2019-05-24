@@ -13,174 +13,226 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    uniWidth = MediaQuery.of(context).size.width;
-    uniHeight = MediaQuery.of(context).size.height;
+    uniWidth = MediaQuery
+        .of(context)
+        .size
+        .width;
+    uniHeight = MediaQuery
+        .of(context)
+        .size
+        .height;
 
     return Scaffold(
-      drawer: Drawer(
-        child: Column(
-          children: <Widget>[
-            new Container(
-              height: uniHeight/3.25,
-              child: new Center(
-                child: new Text(
-                  "PlantEase",
-                  style: new TextStyle(fontSize: 40.0, color: Colors.white),
-                ),
-              ),
-              color: Colors.teal,
-            ),
-            Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.5, 0.0, 0.0)),
-            new Row(
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                  Icons.language,
-                  color: Colors.teal,
-                ),
-                onPressed: (){},
-                ),
-                Text(
-                  "Change Language",
-                  style: new TextStyle(fontSize: 15, color: Colors.teal),
-                )
-              ],
-            ),
-            new Row(
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                  Icons.info_outline,
-                  color: Colors.teal,
-                ),
-                onPressed: (){},
-                ),
-                Text(
-                  "How To Use App",
-                  style: new TextStyle(fontSize: 15, color: Colors.teal),
-                )
-              ],
-            ),
-            new Row(
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                  Icons.mail_outline,
-                  color: Colors.teal,
-                ),
-                onPressed: (){},
-                ),
-                Text(
-                  "Contact Us",
-                  style: new TextStyle(fontSize: 15, color: Colors.teal),
-                )
-              ],
-            ),
-            new Row(
-              children: <Widget>[
-                IconButton(
-                    icon: Icon(
-                  Icons.share,
-                  color: Colors.teal,
-                ),
-                onPressed: (){},
-                ),
-                Text(
-                  "Share App",
-                  style: new TextStyle(fontSize: 15, color: Colors.teal),
-                )
-              ],
-            )
-          ],
-        ),
-      ),
-      
-      appBar: new AppBar(
-        backgroundColor: Colors.teal,
-        title: new Text("Plant Ease"),
-        elevation: 10.0,
-        leading: IconButton(
-          onPressed: () {},
-          icon: Icon(
-            Icons.format_list_bulleted,
-          ),
-          color: Colors.white,
-        ),
-      ),
-      body: Container(
-        child: SingleChildScrollView(
+        drawer: Drawer(
           child: Column(
             children: <Widget>[
-              SizedBox(height: uniHeight / 25),
-              Container(
-                  padding: EdgeInsets.only(
-                      left: uniWidth / 14.4, right: uniWidth / 14.4),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: <Widget>[
-                      Text(
-                        "Select Your Crop",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 15.0,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ],
-                  )),
-              SizedBox(
-                height: 10.0,
+              new Container(
+                height: uniHeight / 3.25,
+                child: new Center(
+                  child: new Text(
+                    "PlantEase",
+                    style: new TextStyle(fontSize: 40.0, color: Colors.white),
+                  ),
+                ),
+                color: Colors.teal,
               ),
-              GridView.count(
-                  crossAxisCount: 3,
-                  crossAxisSpacing: 2.0,
-                  mainAxisSpacing: 4.0,
-                  shrinkWrap: true,
-                  children: <Widget>[
-                    _buildCard("Graoes", 'assets/grapes-2656259_1280.jpg'),
-                    _buildCard(
-                        "Apple", "assets/2b74874798de42d5de6e4711150946d3.jpg"),
-                    _buildCard("Cherry", 'assets/Cherry_Tree_-_Stella.jpg'),
-                    _buildCard("Corn",
-                        "assets/BONNIE-PLANTS_corn-iStock-857670630-2400px.jpg"),
-                    _buildCard("Orange", "assets/fruit-orange.jpg"),
-                    _buildCard("Peach", "assets/peach-seedling-350x322.jpg"),
-                    _buildCard(
-                        "Pepper", "assets/image1_2_NNDIjA1438463783480.jpg"),
-                    _buildCard("Potato", "assets/POT-270z.jpg"),
-                    _buildCard(
-                        "Squash", "assets/winter-squash-varieties-020217.jpg"),
-                    _buildCard("Strawberry", "assets/13853.jpg"),
-                    _buildCard("Tomato", "assets/tomato.jpg")
-                  ])
+              Padding(
+                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.5, 0.0, 0.0)),
+              new Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.language,
+                      color: Colors.teal,
+                    ),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    "Change Language",
+                    style: new TextStyle(fontSize: 15, color: Colors.teal),
+                  )
+                ],
+              ),
+              new Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.info_outline,
+                      color: Colors.teal,
+                    ),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    "How To Use App",
+                    style: new TextStyle(fontSize: 15, color: Colors.teal),
+                  )
+                ],
+              ),
+              new Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.mail_outline,
+                      color: Colors.teal,
+                    ),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    "Contact Us",
+                    style: new TextStyle(fontSize: 15, color: Colors.teal),
+                  )
+                ],
+              ),
+              new Row(
+                children: <Widget>[
+                  IconButton(
+                    icon: Icon(
+                      Icons.share,
+                      color: Colors.teal,
+                    ),
+                    onPressed: () {},
+                  ),
+                  Text(
+                    "Share App",
+                    style: new TextStyle(fontSize: 15, color: Colors.teal),
+                  )
+                ],
+              )
             ],
           ),
         ),
-      ),
+
+        appBar: new AppBar(
+          backgroundColor: Colors.teal,
+          title: new Text("Plant Ease"),
+          elevation: 10.0,
+          leading: IconButton(
+            onPressed: () {},
+            icon: Icon(
+              Icons.format_list_bulleted,
+            ),
+            color: Colors.white,
+          ),
+        ),
+        body: Container(
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                SizedBox(height: uniHeight / 25),
+                Container(
+                    padding: EdgeInsets.only(
+                        left: uniWidth / 14.4, right: uniWidth / 14.4),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Text(
+                          "Select Your Crop",
+                          style: TextStyle(
+                            color: Colors.grey,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      ],
+                    )),
+                SizedBox(
+                  height: 10.0,
+                ),
+                GridView.count(
+                    crossAxisCount: 3,
+                    crossAxisSpacing: 2.0,
+                    mainAxisSpacing: 4.0,
+                    shrinkWrap: true,
+                    children: <Widget>[
+                      _buildCard("Graoes", 'assets/grapes-2656259_1280.jpg'),
+                      _buildCard(
+                          "Apple",
+                          "assets/2b74874798de42d5de6e4711150946d3.jpg"),
+                      _buildCard("Cherry", 'assets/Cherry_Tree_-_Stella.jpg'),
+                      _buildCard("Corn",
+                          "assets/BONNIE-PLANTS_corn-iStock-857670630-2400px.jpg"),
+                      _buildCard("Orange", "assets/fruit-orange.jpg"),
+                      _buildCard("Peach", "assets/peach-seedling-350x322.jpg"),
+                      _buildCard(
+                          "Pepper", "assets/image1_2_NNDIjA1438463783480.jpg"),
+                      _buildCard("Potato", "assets/POT-270z.jpg"),
+                      _buildCard(
+                          "Squash",
+                          "assets/winter-squash-varieties-020217.jpg"),
+                      _buildCard("Strawberry", "assets/13853.jpg"),
+                      _buildCard("Tomato", "assets/tomato.jpg")
+                    ])
+              ],
+            ),
+          ),
+        ),
+        floatingActionButton: new FloatingActionButton(
+          onPressed: () {
+            showDialog(
+                context: context,
+                builder: (context) => new AlertDialog(
+
+                  title: Text("Enter Your Crop"),
+                 content: new Container(
+                   height: uniHeight/3,
+
+                 child :Column(
+
+
+                   children: <Widget>[
+
+                     TextFormField(
+                       decoration: new InputDecoration(
+                         labelText: "Crop",
+
+                         fillColor: Colors.white,
+                         border: new OutlineInputBorder(
+
+
+                           borderRadius: new BorderRadius.circular(25.0),
+
+                           borderSide: new BorderSide(
+                           ),
+                         ),
+
+                       ),
+                       cursorColor: Colors.teal,
+
+                     ),
+                     RaisedButton(onPressed: (){Navigator.pushNamed(context, '/Image');}, child: new Text("Submit"),
+                     )
+
+                   ],
+                 ),
+                 )
+                )
+            );
+          },
+          child: new Icon(Icons.add_circle_outline, color: Colors.white,),
+          backgroundColor: Colors.teal,
+        )
     );
   }
 
   Widget _buildCard(String name, String status) {
-
     //todo: Add Navigation to Image Picking Screen
 
 
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         //todo: Pass the selected image as parameter for the ML Model to process the image accordingly in a optimised manner
 
         Navigator.of(context).pushNamed('/Image');
       },
       child: Card(
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
           elevation: 3.0,
           child: Column(
               children: <Widget>[
-            SizedBox(
-              height: uniHeight / 53,
-            ),
+                SizedBox(
+                  height: uniHeight / 53,
+                ),
 
                 Container(
                     height: 80.0,
@@ -190,14 +242,17 @@ class _HomePageState extends State<HomePage> {
                         color: Colors.white,
                         image: DecorationImage(
                             image: AssetImage(status), fit: BoxFit.fill))),
-            Center(
-                    child: Text(
-                      name,
-                      style: TextStyle(
-                          color: Colors.teal, fontWeight: FontWeight.bold),
-                    ),
+                Center(
+                  child: Text(
+                    name,
+                    style: TextStyle(
+                        color: Colors.teal, fontWeight: FontWeight.bold),
                   ),
-          ])),
+                ),
+              ])),
     );
   }
+
 }
+
+

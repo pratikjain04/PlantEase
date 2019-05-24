@@ -13,5 +13,6 @@ void main() => runApp(MaterialApp(
 
         '/Home': (BuildContext context) => HomePage(),
         '/Image': (BuildContext context) => ImageUpload()
+
       },
     ));
