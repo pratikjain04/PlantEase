@@ -20,41 +20,39 @@ class _HomePageState extends State<HomePage> {
     uniHeight = MediaQuery.of(context).size.height;
 
     return Scaffold(
-        drawer: Drawer(
-          child: Column(
-
-
-            children: <Widget>[
-              new Container(
-                height: uniHeight / 3.25,
-                child: new Center(
-                  child: new Text(
-                    "PlantEase",
-                    style: new TextStyle(fontSize: 40.0, color: Colors.white),
-                  ),
-                ),
-                color: Colors.teal,
-              ),
-              Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.5, 0.0, 0.0)),
-             _buildRow("Change Language", Icons.language),
-              _buildRow("How To Use The App", Icons.info_outline),
-              _buildRow("Contact Us", Icons.mail_outline),
-              _buildRow("Share App", Icons.share)
-            ],
-          ),
-        ),
         appBar: new AppBar(
+
             backgroundColor: Colors.teal,
             title: new Text("Plant Ease"),
-            elevation: 10.0,
-            leading: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.format_list_bulleted,
-              ),
-              color: Colors.white,
-            )),
+            centerTitle: true,
+            elevation: 5.0,
+           ),
+
+        drawer: Drawer(
+          child: Container(
+            child: Column(
+              children: <Widget>[
+                Container(
+                  height: uniHeight / 3.25,
+                  child: new Center(
+                    child: new Text(
+                      "PlantEase",
+                      style: new TextStyle(fontSize: 40.0, color: Colors.white),
+                    ),
+                  ),
+                  color: Colors.teal,
+                ),
+                Padding(padding: EdgeInsets.only(top: uniHeight/25)),
+
+                _buildRow("Change Language", Icons.language),
+                _buildRow("How To Use The App", Icons.info_outline),
+                _buildRow("Contact Us", Icons.mail_outline),
+                _buildRow("Share App", Icons.share)
+              ],
+            ),
+          ),
+        ),
+
         body: Container(
           child: SingleChildScrollView(
             child: Column(
@@ -227,22 +225,20 @@ class _HomePageState extends State<HomePage> {
           ])),
     );
   }
-  Widget _buildRow(String name, IconData i)
+  Widget _buildRow(String name, IconData rowIcon)
   {
-
    return Row(
-
-
-      children: <Widget>[
-
-        ListTile(
-
-          title: Text(name,style: TextStyle(color: Colors.teal),),
-          leading: Icon(i,color: Colors.teal,),
-        )
-      ],
-
-
-    );
+       mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            width: uniWidth/1.5,
+            height: uniHeight/15,
+            child: ListTile(
+              title: Text(name,style: TextStyle(color: Colors.teal),),
+              leading: Icon(rowIcon, color: Colors.teal,)
+            ),
+          )
+        ],
+   );
   }
 }
