@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+ import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -22,6 +22,8 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
         drawer: Drawer(
           child: Column(
+
+
             children: <Widget>[
               new Container(
                 height: uniHeight / 3.25,
@@ -35,66 +37,10 @@ class _HomePageState extends State<HomePage> {
               ),
               Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 6.5, 0.0, 0.0)),
-              new Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      Icons.language,
-                      color: Colors.teal,
-                    ),
-                    onPressed: () {},
-                  ),
-                  Text(
-                    "Change Language",
-                    style: new TextStyle(fontSize: 15, color: Colors.teal),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      Icons.info_outline,
-                      color: Colors.teal,
-                    ),
-                    onPressed: () {},
-                  ),
-                  Text(
-                    "How To Use App",
-                    style: new TextStyle(fontSize: 15, color: Colors.teal),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      Icons.mail_outline,
-                      color: Colors.teal,
-                    ),
-                    onPressed: () {},
-                  ),
-                  Text(
-                    "Contact Us",
-                    style: new TextStyle(fontSize: 15, color: Colors.teal),
-                  )
-                ],
-              ),
-              new Row(
-                children: <Widget>[
-                  IconButton(
-                    icon: Icon(
-                      Icons.share,
-                      color: Colors.teal,
-                    ),
-                    onPressed: () {},
-                  ),
-                  Text(
-                    "Share App",
-                    style: new TextStyle(fontSize: 15, color: Colors.teal),
-                  )
-                ],
-              )
+             _buildRow("Change Language", Icons.language),
+              _buildRow("How To Use The App", Icons.info_outline),
+              _buildRow("Contact Us", Icons.mail_outline),
+              _buildRow("Share App", Icons.share)
             ],
           ),
         ),
@@ -279,6 +225,24 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ])),
+    );
+  }
+  Widget _buildRow(String name, IconData i)
+  {
+
+   return Row(
+
+
+      children: <Widget>[
+
+        ListTile(
+
+          title: Text(name,style: TextStyle(color: Colors.teal),),
+          leading: Icon(i,color: Colors.teal,),
+        )
+      ],
+
+
     );
   }
 }
