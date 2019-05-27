@@ -1,4 +1,4 @@
- import 'package:flutter/material.dart';
+import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -21,13 +21,11 @@ class _HomePageState extends State<HomePage> {
 
     return Scaffold(
         appBar: new AppBar(
-
-            backgroundColor: Colors.teal,
-            title: new Text("Plant Ease"),
-            centerTitle: true,
-            elevation: 5.0,
-           ),
-
+          backgroundColor: Colors.teal,
+          title: new Text("Plant Ease"),
+          centerTitle: true,
+          elevation: 5.0,
+        ),
         drawer: Drawer(
           child: Container(
             child: Column(
@@ -42,8 +40,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                   color: Colors.teal,
                 ),
-                Padding(padding: EdgeInsets.only(top: uniHeight/25)),
-
+                Padding(padding: EdgeInsets.only(top: uniHeight / 25)),
                 _buildRow("Change Language", Icons.language),
                 _buildRow("How To Use The App", Icons.info_outline),
                 _buildRow("Contact Us", Icons.mail_outline),
@@ -52,7 +49,6 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
         ),
-
         body: Container(
           child: SingleChildScrollView(
             child: Column(
@@ -128,7 +124,7 @@ class _HomePageState extends State<HomePage> {
                               child: TextFormField(
                                 controller: controller,
                                 textInputAction: TextInputAction.done,
-                                onEditingComplete: (){},
+                                onEditingComplete: () {},
                                 decoration: new InputDecoration(
                                   labelText: "Crop",
                                   hintText: 'Apple',
@@ -157,7 +153,7 @@ class _HomePageState extends State<HomePage> {
                                   color: Colors.white,
                                   onPressed: () {
                                     _formKey.currentState.save();
-                                    if(_formKey.currentState.validate())
+                                    if (_formKey.currentState.validate())
                                       Navigator.pushNamed(context, '/Image');
                                   },
                                   child: new Text(
@@ -225,20 +221,25 @@ class _HomePageState extends State<HomePage> {
           ])),
     );
   }
-  Widget _buildRow(String name, IconData rowIcon)
-  {
-   return Row(
-       mainAxisAlignment: MainAxisAlignment.start,
-        children: <Widget>[
-          Container(
-            width: uniWidth/1.5,
-            height: uniHeight/15,
-            child: ListTile(
-              title: Text(name,style: TextStyle(color: Colors.teal),),
-              leading: Icon(rowIcon, color: Colors.teal,)
-            ),
-          )
-        ],
-   );
+
+  Widget _buildRow(String name, IconData rowIcon) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          width: uniWidth / 1.5,
+          height: uniHeight / 15,
+          child: ListTile(
+              title: Text(
+                name,
+                style: TextStyle(color: Colors.teal),
+              ),
+              leading: Icon(
+                rowIcon,
+                color: Colors.teal,
+              )),
+        )
+      ],
+    );
   }
 }
