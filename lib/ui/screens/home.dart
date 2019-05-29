@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -41,10 +42,13 @@ class _HomePageState extends State<HomePage> {
                   color: Colors.teal,
                 ),
                 Padding(padding: EdgeInsets.only(top: uniHeight / 25)),
-                _buildRow("Change Language", Icons.language),
-                _buildRow("How To Use The App", Icons.info_outline),
-                _buildRow("Contact Us", Icons.mail_outline),
-                _buildRow("Share App", Icons.share)
+                _buildRow("Change Language", Icons.language, () {}),
+                _buildRow("How To Use The App", Icons.info_outline, () {}),
+                _buildRow("Contact Us", Icons.mail_outline, () {}),
+                _buildRow("Share App", Icons.share, () {
+                  Share.share(
+                      "Hey! Download this amazing app, Plantease from the PlayStore. It has the simplest way to identify and cure diseases of your crops!");
+                })
               ],
             ),
           ),
@@ -222,7 +226,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget _buildRow(String name, IconData rowIcon) {
+  Widget _buildRow(String name, IconData rowIcon, Function onRowTapped) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: <Widget>[
@@ -230,6 +234,7 @@ class _HomePageState extends State<HomePage> {
           width: uniWidth / 1.5,
           height: uniHeight / 15,
           child: ListTile(
+              onTap: onRowTapped,
               title: Text(
                 name,
                 style: TextStyle(color: Colors.teal),
