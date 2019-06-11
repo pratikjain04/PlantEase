@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'dart:io';
 
 class ImageUpload extends StatefulWidget {
   @override
@@ -7,7 +9,32 @@ class ImageUpload extends StatefulWidget {
 
 class _ImageUploadState extends State<ImageUpload> {
 
-  //todo: ImagePicker Code to be added
+  Future<File> imageFile;
+
+
+  pickImageFromGallery(ImageSource source) {
+    setState(() {
+      imageFile = ImagePicker.pickImage(source: source);
+    });
+  }
+
+  /*Widget showImage() {
+    return FutureBuilder<File>(
+      future: imageFile,
+      builder: (BuildContext context, AsyncSnapshot<File> snapshot) {
+        if (snapshot.connectionState == ConnectionState.done &&
+            snapshot.data != null) {
+          return Image.file(
+            snapshot.data,
+            height:10.0,
+            width: 10.0,
+
+          );
+        }
+      },
+    );
+  }*/
+
 
   double uniHeight;
   double uniWidth;
@@ -36,14 +63,27 @@ class _ImageUploadState extends State<ImageUpload> {
                        boxShadow: [BoxShadow(color: Colors.black12, blurRadius: 5.0, spreadRadius: 5.0), ],
                      ),
                      child: Column(
+
+
                        mainAxisAlignment: MainAxisAlignment.center,
                        crossAxisAlignment: CrossAxisAlignment.center,
                        children: <Widget>[
-                         Icon(Icons.camera_alt, color: Colors.teal, size: uniWidth/10,),
+
+
+                         Icon(Icons.camera_alt, color: Colors.teal, size: uniWidth/10, ),
                          Padding(padding: EdgeInsets.only(top: uniHeight/50)),
-                         Padding(
-                             padding: EdgeInsets.only(left: uniWidth/50),
-                             child: Text('Click Image from Camera', style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold, fontSize: uniWidth/18),))
+                         FlatButton(
+                             color: Colors.white,
+                             onPressed: (){pickImageFromGallery(ImageSource.camera);},
+                             child: Padding(
+                                 padding: EdgeInsets.only(left: uniWidth/50),
+                                 child: Text('Click Image from Camera',
+                                   style: TextStyle(color: Colors.black54,
+                                       fontWeight: FontWeight.bold,
+                                       fontSize: uniWidth/18),
+                                 )
+                             )
+                         )
                        ],
                      ),
                  ),
@@ -64,9 +104,17 @@ class _ImageUploadState extends State<ImageUpload> {
                         children: <Widget>[
                           Icon(Icons.image, color: Colors.teal, size: uniWidth/10,),
                           Padding(padding: EdgeInsets.only(top: uniHeight/50)),
-                          Padding(
+                          FlatButton(
+                              color: Colors.white,
+                              onPressed: (){pickImageFromGallery(ImageSource.gallery);},
+                        child:  Padding(
                               padding: EdgeInsets.only(left: uniWidth/50),
-                              child: Text('Pick Image from Gallery', style: TextStyle(color: Colors.black54, fontWeight: FontWeight.bold, fontSize: uniWidth/18),))
+                              child: Text('Pick Image from Gallery',
+                                style: TextStyle(color: Colors.black54,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: uniWidth/18),)
+                          )
+                  )
                         ],
                       ),
                     ),
@@ -74,7 +122,17 @@ class _ImageUploadState extends State<ImageUpload> {
                 ],
               ),
               Padding(padding: EdgeInsets.only(top: uniHeight/5)),
-              Center(child: Text('You will get your Image Preview Here', style: TextStyle(color: Colors.black54, fontSize: uniWidth/18),),)
+              Column(
+
+                children:<Widget>[
+                  Text('You will get your Image Preview Here',
+                  style: TextStyle(color: Colors.black54,
+                      fontSize: uniWidth/18),),
+            //showImage()
+
+
+             ] ),
+
             ],
           ),
         ),
